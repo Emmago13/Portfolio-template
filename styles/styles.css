@@ -28,6 +28,7 @@ header {
   align-items: center;
   justify-content: center;
   position: absolute;
+  background-color: #EAE9E9;
 }
 header ul {
   display: flex;
@@ -40,6 +41,17 @@ header ul li {
 header ul li a {
   font-size: 1.6rem;
   color: #000000;
+}
+header ul li a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #9C2D41;
+  transition: all 0.1s ease-in;
+}
+header ul li a:hover:after {
+  width: 100%;
 }
 
 section {
@@ -59,6 +71,7 @@ section h1 {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
+  color: #9C2D41;
 }
 section p {
   width: 50rem;
@@ -83,6 +96,9 @@ footer div {
 }
 footer div a {
   margin: 0 1rem 0 1rem;
+}
+footer div a img:hover {
+  transform: scale(1.2);
 }
 
 @keyframes type {
