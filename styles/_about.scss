@@ -1,0 +1,46 @@
+.section--about{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div{
+        margin-left: 12rem;
+        max-width: 42rem;
+        position: relative;
+        h2{
+            font-size: 4.8rem;
+            font-family: $font-secondary;
+            font-weight: $font-regular;
+            color: $color-secondary;
+        }
+        p{
+            font-size: 1.6rem;
+            line-height: 21px;
+        }
+        h4{
+            margin-top: 5rem;
+            font-size: 1.6rem;
+            font-family: $font-secondary;
+        }
+        button{
+            position: absolute;
+            left: 40%;
+            transform: translate(-50%);
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            border: 1px solid $color-secondary;
+            cursor: pointer;
+            transition: all 0.1s ease-in;
+            &:hover{
+                background-color: $color-secondary;
+                color: #fff;
+            }
+        }
+    }
+    img{
+      max-width: 70rem;
+      max-height: 34.5rem;
+      margin-right: 9rem;
+    }
+}

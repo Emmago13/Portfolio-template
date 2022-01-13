@@ -9,96 +9,149 @@ body {
   background-color: #F0F0F0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
 }
 
+.d-none {
+  display: none;
+}
+
 header {
-  width: 100vw;
+  width: 100%;
   height: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   background-color: #EAE9E9;
 }
+
 header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style-type: none;
   padding: 0;
 }
+
 header ul li {
   margin: 0 7rem 0 7rem;
 }
+
 header ul li a {
   font-size: 1.6rem;
   color: #000000;
 }
+
 header ul li a:after {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 1px;
   background-color: #9C2D41;
+  -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
+
 header ul li a:hover:after {
   width: 100%;
 }
 
-section {
+.section--home {
   height: 90vh;
   width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-section h1 {
+
+.section--home h1 {
   font-size: 4.8rem;
   margin: 19rem 0 2rem 0;
   width: 26ch;
-  font-family: "Quicksand", sans-serif;
-  animation: type 5s steps(31), blink 0.5s step-end infinite alternate;
+  font-family: 'Quicksand', sans-serif;
+  -webkit-animation: type 5s steps(31), blink 0.5s step-end infinite alternate;
+          animation: type 5s steps(31), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
   color: #9C2D41;
 }
-section p {
+
+.section--home p {
   width: 50rem;
   font-size: 1.6rem;
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
   height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 footer p {
-  margin-left: 1.15rem;
+  margin-left: 12rem;
   font-size: 1.4rem;
 }
+
 footer div {
-  margin-left: 60vmax;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-right: 5rem;
 }
+
 footer div a {
-  margin: 0 1rem 0 1rem;
+  margin: 0 2rem 0 2rem;
 }
+
 footer div a img:hover {
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
 }
 
 @keyframes type {
@@ -106,10 +159,328 @@ footer div a img:hover {
     width: 0;
   }
 }
+
+@-webkit-keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 @keyframes blink {
   50% {
     border-color: transparent;
   }
 }
 
+.section--about {
+  height: 90vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section--about div {
+  margin-left: 12rem;
+  max-width: 42rem;
+  position: relative;
+}
+
+.section--about div h2 {
+  font-size: 4.8rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  color: #9C2D41;
+}
+
+.section--about div p {
+  font-size: 1.6rem;
+  line-height: 21px;
+}
+
+.section--about div h4 {
+  margin-top: 5rem;
+  font-size: 1.6rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.section--about div button {
+  position: absolute;
+  left: 40%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  border: 1px solid #9C2D41;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.section--about div button:hover {
+  background-color: #9C2D41;
+  color: #fff;
+}
+
+.section--about img {
+  max-width: 70rem;
+  max-height: 34.5rem;
+  margin-right: 9rem;
+}
+
+.section--contact {
+  padding-top: 7rem;
+  width: 100vw;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.section--contact .div__form {
+  margin-left: 13rem;
+  background-color: #EAE9E9;
+  width: 43rem;
+  height: 50rem;
+  border-radius: 10px;
+}
+
+.section--contact .div__form > form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section--contact .div__form > form > label {
+  position: relative;
+  width: 80%;
+  margin-top: 4rem;
+}
+
+.section--contact .div__form > form > label > input, .section--contact .div__form > form > label textarea {
+  width: 100%;
+  border: none;
+  background: none;
+  font-family: "Roboto", sans-serif;
+  border-bottom: 1px solid #9C2D41;
+}
+
+.section--contact .div__form > form > label > input:focus, .section--contact .div__form > form > label textarea:focus {
+  background: none;
+  outline: none;
+}
+
+.section--contact .div__form > form > label > input::-webkit-input-placeholder, .section--contact .div__form > form > label textarea::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.section--contact .div__form > form > label > input:-ms-input-placeholder, .section--contact .div__form > form > label textarea:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.section--contact .div__form > form > label > input::-ms-input-placeholder, .section--contact .div__form > form > label textarea::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.section--contact .div__form > form > label > input::placeholder, .section--contact .div__form > form > label textarea::placeholder {
+  opacity: 0;
+}
+
+.section--contact .div__form > form > label > input {
+  height: 4rem;
+}
+
+.section--contact .div__form > form > label > input:-webkit-autofill, .section--contact .div__form > form > label > input:-webkit-autofill:focus {
+  -webkit-transition: background-color 600000s 0s, color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+.section--contact .div__form > form > label > textarea {
+  height: 8rem;
+  resize: none;
+}
+
+.section--contact .div__form > form > label > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.4rem;
+  opacity: 0.7;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.section--contact .div__form > form > label:focus-within > span, .section--contact .div__form > form > label input:not(:placeholder-shown) + span {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  font-size: 1.2rem;
+}
+
+.section--contact .div__form > form > label .validation {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  color: #FD4444;
+  opacity: 0;
+  -webkit-transform: translate(5rem, -50%);
+          transform: translate(5rem, -50%);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.section--contact .div__form > form > label:nth-child(4):focus-within > span, .section--contact .div__form > form > label:nth-child(4) textarea:not(:placeholder-shown) + span {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.section--contact .div__form > form > button {
+  margin-top: 5rem;
+  padding: 1rem 2.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 5px;
+  border: 1px solid #9C2D41;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.section--contact .div__form > form > button:hover {
+  background-color: #9C2D41;
+  color: #fff;
+}
+
+.section--contact .div__img {
+  margin-right: 10rem;
+}
+
+.section--contact .div__img > h2 {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-size: 4.8rem;
+  color: #9C2D41;
+}
+
+.section--contact .div__img > p {
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  line-height: 21px;
+}
+
+.section--contact .div__img > img {
+  margin-top: 4rem;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.section--works {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding-top: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section--works > h2 {
+  margin: 10rem 14rem 5rem;
+  font-size: 4.8rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  color: #9C2D41;
+}
+
+.section--works img {
+  max-width: 55rem;
+  max-height: 32rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.section--works img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 5px 5px 12px 1px #ABABAB;
+          box-shadow: 5px 5px 12px 1px #ABABAB;
+}
+
+.section--works h4 {
+  font-size: 3.6rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.section--works p {
+  font-size: 1.6rem;
+}
+
+.section--works .works--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 12rem 0 12rem;
+}
+
+.section--works .works--container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 12rem;
+}
+
+.section--works .works--container > div .works--project__course, .section--works .works--container > div .works--project__todo, .section--works .works--container > div .works--project__calc, .section--works .works--container > div .works--project__api {
+  max-width: 40rem;
+}
+
+.section--works .works--container > div .works--project__course, .section--works .works--container > div .works--project__calc {
+  margin-right: 25rem;
+}
+
+.section--works .works--container > div .works--project__todo, .section--works .works--container > div .works--project__api {
+  margin-left: 25rem;
+}
+
+.section--works .works--container > div:last-child {
+  margin-bottom: 13rem;
+}
 /*# sourceMappingURL=styles.css.map */

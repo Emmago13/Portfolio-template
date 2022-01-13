@@ -1,0 +1,56 @@
+.section--works{
+    width: 100%;
+    height: max-content;
+    padding-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    > h2{
+        margin: 10rem 14rem 5rem;
+        font-size: 4.8rem;
+        font-family: $font-secondary;
+        font-weight: $font-regular;
+        color: $color-secondary;
+    }
+    img{
+        max-width: 55rem;
+        max-height: 32rem;
+        transition: all 0.2s ease-in;
+        &:hover{
+            transform: scale(1.05);
+            box-shadow: 5px 5px 12px 1px $color-terciary;
+        }
+        
+    }
+    h4{
+        font-size: 3.6rem;
+        font-family: $font-secondary;
+        font-weight: $font-regular;
+        margin: 0;
+    }
+    p{
+        font-size: 1.6rem;
+    }
+    .works--container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 12rem 0 12rem;
+        > div{
+            display: flex;
+            margin-top: 12rem;
+            .works--project__course,.works--project__todo,.works--project__calc,.works--project__api{
+                max-width: 40rem;
+            }
+            .works--project__course,.works--project__calc{
+                margin-right: 25rem;
+            }
+            .works--project__todo,.works--project__api{
+                margin-left: 25rem;
+            }
+        }
+        > div:last-child{
+            margin-bottom: 13rem;
+        }
+    }
+}

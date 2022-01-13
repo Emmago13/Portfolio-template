@@ -6,6 +6,7 @@ html{
     background-color: $color-primary;
     margin: 0;
     font-family: $font-primary;
+    font-weight: $font-regular;
   }
   *,
   *:before,
@@ -15,3 +16,6 @@ html{
   a{
     text-decoration: none;
   }
+.d-none{
+  display: none;
+}
