@@ -12,21 +12,31 @@ header{
       padding: 0;
       li{
         margin: 0 7rem 0 7rem;
+        display: flex;
+        flex-direction: column;
+        // cursor: pointer;
         a{
+          display: flex;
+          flex-direction: column;
+          text-align: center;
           font-size: 1.6rem;
           color: #000000;
-          &:after{
-            content: '';
-            display: block;
-            width: 0;
-            height: 1px;
-            background-color: $color-secondary;
-            transition: all 0.1s ease-in;
+          span {
+            display: none;
+            margin-bottom: 5px;
           }
-          &:hover{
-            &:after{
-              width: 100%;
-            }
+        }
+        &:after{
+          content: '';
+          display: block;
+          width: 0;
+          height: 1.5px;
+          background-color: $color-secondary;
+          transition: all 0.1s ease-in;
+        }
+        &:hover{
+          &:after{
+            width: 100%;
           }
         }
       }
@@ -34,6 +44,7 @@ header{
   }
   
   .section--home{
+    padding-top: 7rem;
     height: 90vh;
     width: 100vw;
     display: flex;
@@ -41,8 +52,8 @@ header{
     justify-content: center;
     align-items: center;
     h1{
-      font-size: 4.8rem;
-      margin: 19rem 0 2rem 0;
+      font-size: 5.8rem;
+      margin: 16rem 0 3rem 0;
       width: 26ch;
       font-family: 'Quicksand', sans-serif;
       animation: type 5s steps(31), blink 0.5s step-end infinite alternate;
@@ -72,8 +83,9 @@ header{
       margin-right: 5rem;
       a{
         margin: 0 2rem 0 2rem;
-        img:hover{
-          transform: scale(1.2);
+        transition: all 0.1s ease;
+        &:hover{
+          transform: translateY(-10px);
         }
       }
     }
@@ -90,3 +102,76 @@ header{
     }
   }
 
+
+
+@include breakpoint("desktop"){
+  .section--home h1{
+    font-size: 4.8rem;
+  }
+}
+@include breakpoint("tablet"){
+  .section--home h1{
+    font-size: 3.6rem;
+  }
+  footer p{
+    margin-left: 6rem;
+  }
+}
+@include breakpoint("mobile"){
+  header{
+    height: 10rem;
+  }
+  header ul li{
+    margin: 0 4rem 0 4rem;
+  }
+  header ul li:nth-child(1){
+    margin-left: 0;
+  }
+  header ul li:nth-child(3){
+    margin-right: 0;
+  }
+  header ul li a span{
+    display: block;
+  }
+  .section--home{
+    padding-top: 10rem;
+    height: 85vh;
+  }
+  .section--home h1{
+    animation: none;
+    width: auto;
+    white-space: inherit;
+    border: none;
+    text-align: center;
+    padding: 0 2rem;
+    margin-top: 10rem;
+  }
+  .section--home p{
+    font-size: 1.4rem;
+    text-align: center;
+    width: auto;
+    padding: 0 2rem;
+  }
+  footer{
+    flex-direction: column-reverse;
+    height: 15vh;
+  }
+  footer p{
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+  footer div{
+    margin-right: 0;
+  }
+  footer div a:nth-child(1){
+    margin-left: 0;
+  }
+  footer div a:nth-child(4){
+    margin-right: 0;
+  }
+}
+@include breakpoint("sm-mobile"){
+  header ul li{
+    margin: 0 2rem 0 2rem;
+  }
+}

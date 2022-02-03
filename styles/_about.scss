@@ -1,18 +1,21 @@
 .section--about{
+    padding-top: 7rem;
     height: 90vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     div{
         margin-left: 12rem;
         max-width: 42rem;
-        position: relative;
         h2{
             font-size: 4.8rem;
             font-family: $font-secondary;
             font-weight: $font-regular;
             color: $color-secondary;
+        }
+        img{
+            display: none;
         }
         p{
             font-size: 1.6rem;
@@ -24,23 +27,70 @@
             font-family: $font-secondary;
         }
         button{
-            position: absolute;
-            left: 40%;
-            transform: translate(-50%);
-            padding: 1rem 2.5rem;
-            border-radius: 5px;
-            border: 1px solid $color-secondary;
-            cursor: pointer;
-            transition: all 0.1s ease-in;
-            &:hover{
-                background-color: $color-secondary;
-                color: #fff;
-            }
+            @include button(1.5px,1px);
+            left: 20%;
         }
     }
     img{
-      max-width: 70rem;
-      max-height: 34.5rem;
-      margin-right: 9rem;
+        width: 45%;
+        height: 45%;
+        margin-right: 4rem;
+    }
+}
+
+
+
+//breakpoints
+
+@include breakpoint("xl-desktop"){
+    .section--about img{
+        width: 50%;
+        height: 50%;
+        margin-right: 9rem;
+    }
+}
+@include breakpoint("desktop"){
+    .section--about{
+        justify-content: center;
+    }
+    .section--about div{
+        margin: 0;
+        padding: 5rem 2rem;
+    }
+    .section--about div img{
+        display: block;
+        width: 100%;
+        margin: 10rem 0;
+    }
+    .section--about div p{
+        font-size: 1.4rem;
+    }
+    .section--about div button{
+        left: 25%;
+    }
+    .section--about img{
+        display: none;
+    }
+}
+@include breakpoint("tablet"){
+    .section--about{ 
+        height: max-content;
+    }
+    .section--about div h2{
+        font-size: 3.6rem;
+    }
+}
+@include breakpoint("mobile"){
+    .section--about{
+        padding-top: 10rem;
+    }
+    .section--about div button{
+        margin: 3rem 0;
+    }
+}
+@include breakpoint("sm-mobile"){
+    .section--about div button{
+        left: 15%;
+        margin: 3rem 0;
     }
 }

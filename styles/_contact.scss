@@ -84,16 +84,7 @@
             }
             > button{
                 margin-top: 5rem;
-                padding: 1rem 2.5rem;
-                width: max-content;
-                border-radius: 5px;
-                border: 1px solid $color-secondary;
-                cursor: pointer;
-                transition: all 0.1s ease-in;
-                &:hover{
-                    background-color: $color-secondary;
-                    color: #fff;
-                }
+                @include button(1px,1.5px);
             }
         }
     }
@@ -116,5 +107,56 @@
             max-width: 400px;
             max-height: 400px;
         }
+    }
+}
+
+
+//Breakpoints
+
+
+@include breakpoint("lg-desktop"){
+    .section--contact .div__img{
+        margin-right: 5rem;
+    }
+}
+@include breakpoint("desktop"){
+    .section--contact{
+        flex-direction: column-reverse;
+        height: max-content;
+    }
+    .section--contact .div__img{
+        margin-top: 5rem;
+        margin-right: 0;
+    }
+    .section--contact .div__img img{
+        display: none;
+    }
+    .section--contact .div__img h2{
+        font-size: 3.6rem;
+    }
+    .section--contact .div__form{
+        margin: 5rem 0;
+    }
+}
+@include breakpoint("mobile"){
+    .section--contact .div__img{
+        padding: 0 2rem;
+    }
+    .section--contact .div__img p{
+        font-size: 1.4rem;
+    }
+    .section--contact .div__form{
+        width: 80%;
+    }
+}
+@include breakpoint("sm-mobile"){
+    .section--contact .div__img h2{
+        text-align: center;
+    }
+    .section--contact .div__img p{
+        text-align: center;
+    }
+    .section--contact .div__form{
+        width: 100%;
     }
 }

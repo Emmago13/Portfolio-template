@@ -53,28 +53,49 @@ header ul {
 
 header ul li {
   margin: 0 7rem 0 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 header ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
   font-size: 1.6rem;
   color: #000000;
 }
 
-header ul li a:after {
+header ul li a span {
+  display: none;
+  margin-bottom: 5px;
+}
+
+header ul li:after {
   content: '';
   display: block;
   width: 0;
-  height: 1px;
+  height: 1.5px;
   background-color: #9C2D41;
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
 
-header ul li a:hover:after {
+header ul li:hover:after {
   width: 100%;
 }
 
 .section--home {
+  padding-top: 7rem;
   height: 90vh;
   width: 100vw;
   display: -webkit-box;
@@ -93,8 +114,8 @@ header ul li a:hover:after {
 }
 
 .section--home h1 {
-  font-size: 4.8rem;
-  margin: 19rem 0 2rem 0;
+  font-size: 5.8rem;
+  margin: 16rem 0 3rem 0;
   width: 26ch;
   font-family: 'Quicksand', sans-serif;
   -webkit-animation: type 5s steps(31), blink 0.5s step-end infinite alternate;
@@ -141,11 +162,13 @@ footer div {
 
 footer div a {
   margin: 0 2rem 0 2rem;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
-footer div a img:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+footer div a:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 @-webkit-keyframes type {
@@ -172,9 +195,89 @@ footer div a img:hover {
   }
 }
 
+@media only screen and (max-width: 992px) {
+  .section--home h1 {
+    font-size: 4.8rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section--home h1 {
+    font-size: 3.6rem;
+  }
+  footer p {
+    margin-left: 6rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  header {
+    height: 10rem;
+  }
+  header ul li {
+    margin: 0 4rem 0 4rem;
+  }
+  header ul li:nth-child(1) {
+    margin-left: 0;
+  }
+  header ul li:nth-child(3) {
+    margin-right: 0;
+  }
+  header ul li a span {
+    display: block;
+  }
+  .section--home {
+    padding-top: 10rem;
+    height: 85vh;
+  }
+  .section--home h1 {
+    -webkit-animation: none;
+            animation: none;
+    width: auto;
+    white-space: inherit;
+    border: none;
+    text-align: center;
+    padding: 0 2rem;
+    margin-top: 10rem;
+  }
+  .section--home p {
+    font-size: 1.4rem;
+    text-align: center;
+    width: auto;
+    padding: 0 2rem;
+  }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    height: 15vh;
+  }
+  footer p {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+  footer div {
+    margin-right: 0;
+  }
+  footer div a:nth-child(1) {
+    margin-left: 0;
+  }
+  footer div a:nth-child(4) {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  header ul li {
+    margin: 0 2rem 0 2rem;
+  }
+}
+
 .section--about {
+  padding-top: 7rem;
   height: 90vh;
-  width: 100vw;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,7 +292,6 @@ footer div a img:hover {
 .section--about div {
   margin-left: 12rem;
   max-width: 42rem;
-  position: relative;
 }
 
 .section--about div h2 {
@@ -197,6 +299,10 @@ footer div a img:hover {
   font-family: "Quicksand", sans-serif;
   font-weight: 400;
   color: #9C2D41;
+}
+
+.section--about div img {
+  display: none;
 }
 
 .section--about div p {
@@ -211,27 +317,170 @@ footer div a img:hover {
 }
 
 .section--about div button {
-  position: absolute;
-  left: 40%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
+  position: relative;
+  width: 170px;
+  height: 38px;
+  border: none;
+  background-color: #9C2D41;
+  color: #fff;
   padding: 1rem 2.5rem;
   border-radius: 5px;
   border: 1px solid #9C2D41;
   cursor: pointer;
-  -webkit-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0;
+  left: 20%;
+}
+
+.section--about div button > span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
+}
+
+.section--about div button:before, .section--about div button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #9C2D41;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.section--about div button:before {
+  right: 0;
+  height: 0%;
+  width: 1px;
+}
+
+.section--about div button:after {
+  left: 0;
+  width: 0%;
+  height: 1px;
+}
+
+.section--about div button span:before,
+.section--about div button span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: #9C2D41;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.section--about div button span:before {
+  left: 0;
+  height: 0%;
+  width: 1.5px;
+}
+
+.section--about div button span:after {
+  right: 0;
+  width: 0%;
+  height: 1.5px;
 }
 
 .section--about div button:hover {
-  background-color: #9C2D41;
-  color: #fff;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+.section--about div button:hover:before {
+  height: 100%;
+}
+
+.section--about div button:hover:after {
+  width: 100%;
+}
+
+.section--about div button span:hover {
+  color: #9C2D41;
+}
+
+.section--about div button span:hover:before {
+  height: 100%;
+}
+
+.section--about div button span:hover:after {
+  width: 100%;
+}
+
+.section--about div button:active {
+  top: 2px;
 }
 
 .section--about img {
-  max-width: 70rem;
-  max-height: 34.5rem;
-  margin-right: 9rem;
+  width: 45%;
+  height: 45%;
+  margin-right: 4rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .section--about img {
+    width: 50%;
+    height: 50%;
+    margin-right: 9rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .section--about {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section--about div {
+    margin: 0;
+    padding: 5rem 2rem;
+  }
+  .section--about div img {
+    display: block;
+    width: 100%;
+    margin: 10rem 0;
+  }
+  .section--about div p {
+    font-size: 1.4rem;
+  }
+  .section--about div button {
+    left: 25%;
+  }
+  .section--about img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section--about {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .section--about div h2 {
+    font-size: 3.6rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .section--about {
+    padding-top: 10rem;
+  }
+  .section--about div button {
+    margin: 3rem 0;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .section--about div button {
+    left: 15%;
+    margin: 3rem 0;
+  }
 }
 
 .section--contact {
@@ -356,20 +605,102 @@ footer div a img:hover {
 
 .section--contact .div__form > form > button {
   margin-top: 5rem;
+  position: relative;
+  width: 170px;
+  height: 38px;
+  border: none;
+  background-color: #9C2D41;
+  color: #fff;
   padding: 1rem 2.5rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
   border-radius: 5px;
   border: 1px solid #9C2D41;
   cursor: pointer;
-  -webkit-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.section--contact .div__form > form > button > span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
+}
+
+.section--contact .div__form > form > button:before, .section--contact .div__form > form > button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #9C2D41;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.section--contact .div__form > form > button:before {
+  right: 0;
+  height: 0%;
+  width: 1.5px;
+}
+
+.section--contact .div__form > form > button:after {
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+}
+
+.section--contact .div__form > form > button span:before,
+.section--contact .div__form > form > button span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: #9C2D41;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.section--contact .div__form > form > button span:before {
+  left: 0;
+  height: 0%;
+  width: 1px;
+}
+
+.section--contact .div__form > form > button span:after {
+  right: 0;
+  width: 0%;
+  height: 1px;
 }
 
 .section--contact .div__form > form > button:hover {
-  background-color: #9C2D41;
-  color: #fff;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+.section--contact .div__form > form > button:hover:before {
+  height: 100%;
+}
+
+.section--contact .div__form > form > button:hover:after {
+  width: 100%;
+}
+
+.section--contact .div__form > form > button span:hover {
+  color: #9C2D41;
+}
+
+.section--contact .div__form > form > button span:hover:before {
+  height: 100%;
+}
+
+.section--contact .div__form > form > button span:hover:after {
+  width: 100%;
+}
+
+.section--contact .div__form > form > button:active {
+  top: 2px;
 }
 
 .section--contact .div__img {
@@ -394,6 +725,61 @@ footer div a img:hover {
   margin-top: 4rem;
   max-width: 400px;
   max-height: 400px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .section--contact .div__img {
+    margin-right: 5rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .section--contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .section--contact .div__img {
+    margin-top: 5rem;
+    margin-right: 0;
+  }
+  .section--contact .div__img img {
+    display: none;
+  }
+  .section--contact .div__img h2 {
+    font-size: 3.6rem;
+  }
+  .section--contact .div__form {
+    margin: 5rem 0;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .section--contact .div__img {
+    padding: 0 2rem;
+  }
+  .section--contact .div__img p {
+    font-size: 1.4rem;
+  }
+  .section--contact .div__form {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .section--contact .div__img h2 {
+    text-align: center;
+  }
+  .section--contact .div__img p {
+    text-align: center;
+  }
+  .section--contact .div__form {
+    width: 100%;
+  }
 }
 
 .section--works {
@@ -424,6 +810,8 @@ footer div a img:hover {
   max-height: 32rem;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+  -webkit-animation: show 0.7s ease-in;
+          animation: show 0.7s ease-in;
 }
 
 .section--works img:hover {
@@ -468,15 +856,15 @@ footer div a img:hover {
   margin-top: 12rem;
 }
 
-.section--works .works--container > div .works--project__course, .section--works .works--container > div .works--project__todo, .section--works .works--container > div .works--project__calc, .section--works .works--container > div .works--project__api {
+.section--works .works--container > div .works--img__right, .section--works .works--container > div .works--img__left {
   max-width: 40rem;
 }
 
-.section--works .works--container > div .works--project__course, .section--works .works--container > div .works--project__calc {
+.section--works .works--container > div .works--img__right {
   margin-right: 25rem;
 }
 
-.section--works .works--container > div .works--project__todo, .section--works .works--container > div .works--project__api {
+.section--works .works--container > div .works--img__left {
   margin-left: 25rem;
 }
 

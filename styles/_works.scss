@@ -15,6 +15,7 @@
         max-width: 55rem;
         max-height: 32rem;
         transition: all 0.2s ease-in;
+        animation: show 0.7s ease-in;
         &:hover{
             transform: scale(1.05);
             box-shadow: 5px 5px 12px 1px $color-terciary;
@@ -39,13 +40,13 @@
         > div{
             display: flex;
             margin-top: 12rem;
-            .works--project__course,.works--project__todo,.works--project__calc,.works--project__api{
+            .works--img__right,.works--img__left{
                 max-width: 40rem;
             }
-            .works--project__course,.works--project__calc{
+            .works--img__right{
                 margin-right: 25rem;
             }
-            .works--project__todo,.works--project__api{
+            .works--img__left{
                 margin-left: 25rem;
             }
         }
@@ -54,3 +55,31 @@
         }
     }
 }
+
+
+// @keyframes show {
+//     from{
+//         transform: translateY(60px);
+//     }
+//     to{
+//         transform: translateY(0);
+//     }
+// }
+
+//Brekpoints
+
+// @include breakpoint("xl-desktop"){
+
+// }
+// @include breakpoint("lg-desktop"){
+
+// }
+// @include breakpoint("desktop"){
+
+// }
+// @include breakpoint("tablet"){
+
+// }
+// @include breakpoint("mobile"){
+    
+// }
