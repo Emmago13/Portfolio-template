@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
-    <title>Portfolio</title>
+    <script type="text/javascript" src="./main.js"></script>
+    <title>Some of my Works</title>
 </head>
 <body>
     <header>
@@ -13,54 +14,54 @@
             <ul>
                 <li>
                     <a href="./index.html">
-                        <span><img src="./img/home icon.svg" alt="home"></span>
+                        <span><img src="./img/homeIcon.svg" alt="home"></span>
                         Home
                     </a>
                 </li>
                 <li>
                     <a href="./_about.html">
-                        <span><img src="./img/about icon.svg" alt="about"></span>
+                        <span><img src="./img/aboutIcon.svg" alt="about"></span>
                         About
                     </a>
                 </li>
                 <li>
                     <a href="./_works.html">
-                        <span><img src="./img/work icon.svg" alt="work"></span>
+                        <span><img src="./img/workIcon.svg" alt="work"></span>
                         Works
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
-    <section class="section--works" id="works">
+    <section class="section__works" id="works">
         <h2>Let’s see some of my own projects</h2>
-        <div class="works--container">
-            <div>
-                <div class="works--img__right">
+        <div class="works__container">
+            <div class="works__div--right">
+                <div class="works__img--right">
                     <h4>Landing Page</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet lacus, tincidunt metus, morbi. Dolor metus, penatibus neque, consequat. Rutrum porttitor vestibulum morbi odio ut donec. Duis gravida sed malesuada pretium scelerisque nibh. Eu, vulputate eget est mi blandit congue eget nunc. </p>
+                    <p>Single page made it with React.js, personalized with Sass preprocessor and Bootstrap. The contact form connects you, through axios, with an Api that sends you a confirmation email.</p>
                 </div>
                 <a href="https://egmyapp.herokuapp.com/" target="_blank"><img src="./img/9e3bd8127399839.614113df90751.png" alt="projectImg"></a>
             </div>
-            <div>
+            <div class="works__div--left">
                 <a href="https://egmundoseapi.herokuapp.com/" target="_blank"><img src="./img/Api mundosE.png" alt="soonImg"></a>
-                <div class="works--img__left">
+                <div class="works__img--left">
                     <h4>Api</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet lacus, tincidunt metus, morbi. Dolor metus, penatibus neque, consequat. Rutrum porttitor vestibulum morbi odio ut donec. Duis gravida sed malesuada pretium scelerisque nibh. Eu, vulputate eget est mi blandit congue eget nunc. </p>
+                    <p>This Api let you send a confirmation email and save the data in a database for whoever use a form. It's made it in PHP, especifically through the Laravel framework.</p>
                 </div>
             </div>
-            <div>
-                <div class="works--img__right">
+            <div class="works__div--right">
+                <div class="works__img--right">
                     <h4>Simple Calculator</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet lacus, tincidunt metus, morbi. Dolor metus, penatibus neque, consequat. Rutrum porttitor vestibulum morbi odio ut donec. Duis gravida sed malesuada pretium scelerisque nibh. Eu, vulputate eget est mi blandit congue eget nunc. </p>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet lacus, tincidunt metus, morbi. Dolor metus, penatibus neque, consequat. Rutrum porttitor vestibulum morbi odio ut donec.</p> -->
                 </div>
-                <a href=""><img src="./img/Captura de pantalla (13).png" alt="soonImg"></a>
+                <a><img src="./img/SoonImg.png" alt="soonImg" class="img--disable"></a>
             </div>
-            <div>
-                <a href=""><img src="./img/Captura de pantalla (13).png" alt="soonImg"></a>
-                <div class="works--img__left">
+            <div class="works__div--left">
+                <a><img src="./img/SoonImg.png" alt="soonImg" class="img--disable"></a>
+                <div class="works__img--left">
                     <h4>To do List</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet lacus, tincidunt metus, morbi. Dolor metus, penatibus neque, consequat. Rutrum porttitor vestibulum morbi odio ut donec. Duis gravida sed malesuada pretium scelerisque nibh. Eu, vulputate eget est mi blandit congue eget nunc. </p>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet lacus, tincidunt metus, morbi. Dolor metus, penatibus neque, consequat. Rutrum porttitor vestibulum morbi odio ut donec.</p> -->
                 </div>
             </div>
         </div>
@@ -75,5 +76,4 @@
         </div>
     </footer>
 </body>
-<script src="./main.js"></script>
 </html>

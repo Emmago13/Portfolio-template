@@ -1,4 +1,4 @@
-.section--about{
+.section__about{
     padding-top: 7rem;
     height: 90vh;
     width: 100%;
@@ -11,7 +11,7 @@
         h2{
             font-size: 4.8rem;
             font-family: $font-secondary;
-            font-weight: $font-regular;
+            font-weight: $font-medium;
             color: $color-secondary;
         }
         img{
@@ -25,9 +25,10 @@
             margin-top: 5rem;
             font-size: 1.6rem;
             font-family: $font-secondary;
+            font-weight: $font-bold;
         }
         button{
-            @include button(1.5px,1px);
+            @include button(1.5px,1.5px);
             left: 20%;
         }
     }
@@ -43,54 +44,60 @@
 //breakpoints
 
 @include breakpoint("xl-desktop"){
-    .section--about img{
+    .section__about img{
         width: 50%;
         height: 50%;
         margin-right: 9rem;
     }
 }
 @include breakpoint("desktop"){
-    .section--about{
+    .section__about{
         justify-content: center;
-    }
-    .section--about div{
-        margin: 0;
-        padding: 5rem 2rem;
-    }
-    .section--about div img{
-        display: block;
-        width: 100%;
-        margin: 10rem 0;
-    }
-    .section--about div p{
-        font-size: 1.4rem;
-    }
-    .section--about div button{
-        left: 25%;
-    }
-    .section--about img{
-        display: none;
+        height: max-content;
+        div{
+            margin: 0;
+            padding: 5rem 2rem;
+            img{
+                display: block;
+                width: 100%;
+                margin: 10rem 0;
+            }
+            p{
+                font-size: 1.4rem;
+            }
+            button{
+                left: 25%;
+            }
+        }
+        img{
+            display: none;
+        }
     }
 }
 @include breakpoint("tablet"){
-    .section--about{ 
+    .section__about{ 
         height: max-content;
-    }
-    .section--about div h2{
-        font-size: 3.6rem;
+        div h2{
+            font-size: 3.6rem;
+        }
     }
 }
 @include breakpoint("mobile"){
-    .section--about{
+    .section__about{
         padding-top: 10rem;
-    }
-    .section--about div button{
-        margin: 3rem 0;
+        div button{
+            margin: 3rem 0;
+        }
     }
 }
 @include breakpoint("sm-mobile"){
-    .section--about div button{
+    .section__about div button{
         left: 15%;
         margin: 3rem 0;
+    }
+}
+@media screen and (min-height: 1000px){
+    .section__about{
+        height: 90vh;
     }
 }

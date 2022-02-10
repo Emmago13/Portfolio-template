@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap");
 html {
   margin: 0;
   font-size: 10px;
@@ -86,6 +85,7 @@ header ul li:after {
   width: 0;
   height: 1.5px;
   background-color: #9C2D41;
+  cursor: pointer;
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
@@ -94,7 +94,7 @@ header ul li:hover:after {
   width: 100%;
 }
 
-.section--home {
+.section__home {
   padding-top: 7rem;
   height: 90vh;
   width: 100vw;
@@ -113,11 +113,12 @@ header ul li:hover:after {
           align-items: center;
 }
 
-.section--home h1 {
+.section__home h1 {
   font-size: 5.8rem;
   margin: 16rem 0 3rem 0;
   width: 26ch;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
   -webkit-animation: type 5s steps(31), blink 0.5s step-end infinite alternate;
           animation: type 5s steps(31), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
@@ -126,7 +127,7 @@ header ul li:hover:after {
   color: #9C2D41;
 }
 
-.section--home p {
+.section__home p {
   width: 50rem;
   font-size: 1.6rem;
 }
@@ -161,14 +162,18 @@ footer div {
 }
 
 footer div a {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
   margin: 0 2rem 0 2rem;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  -webkit-transition: -webkit-transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+  transition: -webkit-transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+  transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+  transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) 0s, -webkit-transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) 0s;
 }
 
 footer div a:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 @-webkit-keyframes type {
@@ -196,13 +201,13 @@ footer div a:hover {
 }
 
 @media only screen and (max-width: 992px) {
-  .section--home h1 {
+  .section__home h1 {
     font-size: 4.8rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .section--home h1 {
+  .section__home h1 {
     font-size: 3.6rem;
   }
   footer p {
@@ -217,20 +222,20 @@ footer div a:hover {
   header ul li {
     margin: 0 4rem 0 4rem;
   }
+  header ul li a span {
+    display: block;
+  }
   header ul li:nth-child(1) {
     margin-left: 0;
   }
   header ul li:nth-child(3) {
     margin-right: 0;
   }
-  header ul li a span {
-    display: block;
-  }
-  .section--home {
+  .section__home {
     padding-top: 10rem;
     height: 85vh;
   }
-  .section--home h1 {
+  .section__home h1 {
     -webkit-animation: none;
             animation: none;
     width: auto;
@@ -240,7 +245,7 @@ footer div a:hover {
     padding: 0 2rem;
     margin-top: 10rem;
   }
-  .section--home p {
+  .section__home p {
     font-size: 1.4rem;
     text-align: center;
     width: auto;
@@ -274,7 +279,7 @@ footer div a:hover {
   }
 }
 
-.section--about {
+.section__about {
   padding-top: 7rem;
   height: 90vh;
   width: 100%;
@@ -289,34 +294,35 @@ footer div a:hover {
           align-items: center;
 }
 
-.section--about div {
+.section__about div {
   margin-left: 12rem;
   max-width: 42rem;
 }
 
-.section--about div h2 {
+.section__about div h2 {
   font-size: 4.8rem;
   font-family: "Quicksand", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: #9C2D41;
 }
 
-.section--about div img {
+.section__about div img {
   display: none;
 }
 
-.section--about div p {
+.section__about div p {
   font-size: 1.6rem;
   line-height: 21px;
 }
 
-.section--about div h4 {
+.section__about div h4 {
   margin-top: 5rem;
   font-size: 1.6rem;
   font-family: "Quicksand", sans-serif;
+  font-weight: 600;
 }
 
-.section--about div button {
+.section__about div button {
   position: relative;
   width: 170px;
   height: 38px;
@@ -333,7 +339,7 @@ footer div a:hover {
   left: 20%;
 }
 
-.section--about div button > span {
+.section__about div button > span {
   position: relative;
   display: block;
   width: 100%;
@@ -341,7 +347,7 @@ footer div a:hover {
   padding-top: 1rem;
 }
 
-.section--about div button:before, .section--about div button:after {
+.section__about div button:before, .section__about div button:after {
   content: "";
   position: absolute;
   top: 0;
@@ -351,20 +357,20 @@ footer div a:hover {
   transition: all 0.3s ease;
 }
 
-.section--about div button:before {
+.section__about div button:before {
   right: 0;
   height: 0%;
-  width: 1px;
+  width: 1.5px;
 }
 
-.section--about div button:after {
+.section__about div button:after {
   left: 0;
   width: 0%;
-  height: 1px;
+  height: 1.5px;
 }
 
-.section--about div button span:before,
-.section--about div button span:after {
+.section__about div button span:before,
+.section__about div button span:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -373,57 +379,57 @@ footer div a:hover {
   transition: all 0.3s ease;
 }
 
-.section--about div button span:before {
+.section__about div button span:before {
   left: 0;
   height: 0%;
   width: 1.5px;
 }
 
-.section--about div button span:after {
+.section__about div button span:after {
   right: 0;
   width: 0%;
   height: 1.5px;
 }
 
-.section--about div button:hover {
+.section__about div button:hover {
   background: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
 }
 
-.section--about div button:hover:before {
+.section__about div button:hover:before {
   height: 100%;
 }
 
-.section--about div button:hover:after {
+.section__about div button:hover:after {
   width: 100%;
 }
 
-.section--about div button span:hover {
+.section__about div button span:hover {
   color: #9C2D41;
 }
 
-.section--about div button span:hover:before {
+.section__about div button span:hover:before {
   height: 100%;
 }
 
-.section--about div button span:hover:after {
+.section__about div button span:hover:after {
   width: 100%;
 }
 
-.section--about div button:active {
+.section__about div button:active {
   top: 2px;
 }
 
-.section--about img {
+.section__about img {
   width: 45%;
   height: 45%;
   margin-right: 4rem;
 }
 
 @media only screen and (min-width: 1200px) {
-  .section--about img {
+  .section__about img {
     width: 50%;
     height: 50%;
     margin-right: 9rem;
@@ -431,61 +437,70 @@ footer div a:hover {
 }
 
 @media only screen and (max-width: 992px) {
-  .section--about {
+  .section__about {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
   }
-  .section--about div {
+  .section__about div {
     margin: 0;
     padding: 5rem 2rem;
   }
-  .section--about div img {
+  .section__about div img {
     display: block;
     width: 100%;
     margin: 10rem 0;
   }
-  .section--about div p {
+  .section__about div p {
     font-size: 1.4rem;
   }
-  .section--about div button {
+  .section__about div button {
     left: 25%;
   }
-  .section--about img {
+  .section__about img {
     display: none;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .section--about {
+  .section__about {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
   }
-  .section--about div h2 {
+  .section__about div h2 {
     font-size: 3.6rem;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .section--about {
+  .section__about {
     padding-top: 10rem;
   }
-  .section--about div button {
+  .section__about div button {
     margin: 3rem 0;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .section--about div button {
+  .section__about div button {
     left: 15%;
     margin: 3rem 0;
   }
 }
 
-.section--contact {
+@media screen and (min-height: 1000px) {
+  .section__about {
+    height: 90vh;
+  }
+}
+
+.section__contact {
   padding-top: 7rem;
-  width: 100vw;
+  width: 100%;
   height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -497,7 +512,7 @@ footer div a:hover {
       justify-content: space-around;
 }
 
-.section--contact .div__form {
+.section__contact .div__form {
   margin-left: 13rem;
   background-color: #EAE9E9;
   width: 43rem;
@@ -505,7 +520,7 @@ footer div a:hover {
   border-radius: 10px;
 }
 
-.section--contact .div__form > form {
+.section__contact .div__form > form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -521,13 +536,13 @@ footer div a:hover {
           justify-content: center;
 }
 
-.section--contact .div__form > form > label {
+.section__contact .div__form > form > label {
   position: relative;
   width: 80%;
   margin-top: 4rem;
 }
 
-.section--contact .div__form > form > label > input, .section--contact .div__form > form > label textarea {
+.section__contact .div__form > form > label > input, .section__contact .div__form > form > label textarea {
   width: 100%;
   border: none;
   background: none;
@@ -535,42 +550,42 @@ footer div a:hover {
   border-bottom: 1px solid #9C2D41;
 }
 
-.section--contact .div__form > form > label > input:focus, .section--contact .div__form > form > label textarea:focus {
+.section__contact .div__form > form > label > input:focus, .section__contact .div__form > form > label textarea:focus {
   background: none;
   outline: none;
 }
 
-.section--contact .div__form > form > label > input::-webkit-input-placeholder, .section--contact .div__form > form > label textarea::-webkit-input-placeholder {
+.section__contact .div__form > form > label > input::-webkit-input-placeholder, .section__contact .div__form > form > label textarea::-webkit-input-placeholder {
   opacity: 0;
 }
 
-.section--contact .div__form > form > label > input:-ms-input-placeholder, .section--contact .div__form > form > label textarea:-ms-input-placeholder {
+.section__contact .div__form > form > label > input:-ms-input-placeholder, .section__contact .div__form > form > label textarea:-ms-input-placeholder {
   opacity: 0;
 }
 
-.section--contact .div__form > form > label > input::-ms-input-placeholder, .section--contact .div__form > form > label textarea::-ms-input-placeholder {
+.section__contact .div__form > form > label > input::-ms-input-placeholder, .section__contact .div__form > form > label textarea::-ms-input-placeholder {
   opacity: 0;
 }
 
-.section--contact .div__form > form > label > input::placeholder, .section--contact .div__form > form > label textarea::placeholder {
+.section__contact .div__form > form > label > input::placeholder, .section__contact .div__form > form > label textarea::placeholder {
   opacity: 0;
 }
 
-.section--contact .div__form > form > label > input {
+.section__contact .div__form > form > label > input {
   height: 4rem;
 }
 
-.section--contact .div__form > form > label > input:-webkit-autofill, .section--contact .div__form > form > label > input:-webkit-autofill:focus {
+.section__contact .div__form > form > label > input:-webkit-autofill, .section__contact .div__form > form > label > input:-webkit-autofill:focus {
   -webkit-transition: background-color 600000s 0s, color 600000s 0s;
   transition: background-color 600000s 0s, color 600000s 0s;
 }
 
-.section--contact .div__form > form > label > textarea {
+.section__contact .div__form > form > label > textarea {
   height: 8rem;
   resize: none;
 }
 
-.section--contact .div__form > form > label > span {
+.section__contact .div__form > form > label > span {
   position: absolute;
   top: 0;
   left: 0;
@@ -580,30 +595,18 @@ footer div a:hover {
   transition: all 0.1s ease-in;
 }
 
-.section--contact .div__form > form > label:focus-within > span, .section--contact .div__form > form > label input:not(:placeholder-shown) + span {
+.section__contact .div__form > form > label:focus-within > span, .section__contact .div__form > form > label input:not(:placeholder-shown) + span {
   -webkit-transform: translateY(-15px);
           transform: translateY(-15px);
   font-size: 1.2rem;
 }
 
-.section--contact .div__form > form > label .validation {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  color: #FD4444;
-  opacity: 0;
-  -webkit-transform: translate(5rem, -50%);
-          transform: translate(5rem, -50%);
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
-.section--contact .div__form > form > label:nth-child(4):focus-within > span, .section--contact .div__form > form > label:nth-child(4) textarea:not(:placeholder-shown) + span {
+.section__contact .div__form > form > label:nth-child(4):focus-within > span, .section__contact .div__form > form > label:nth-child(4) textarea:not(:placeholder-shown) + span {
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
 }
 
-.section--contact .div__form > form > button {
+.section__contact .div__form > form > button {
   margin-top: 5rem;
   position: relative;
   width: 170px;
@@ -620,7 +623,7 @@ footer div a:hover {
   padding: 0;
 }
 
-.section--contact .div__form > form > button > span {
+.section__contact .div__form > form > button > span {
   position: relative;
   display: block;
   width: 100%;
@@ -628,7 +631,7 @@ footer div a:hover {
   padding-top: 1rem;
 }
 
-.section--contact .div__form > form > button:before, .section--contact .div__form > form > button:after {
+.section__contact .div__form > form > button:before, .section__contact .div__form > form > button:after {
   content: "";
   position: absolute;
   top: 0;
@@ -638,20 +641,20 @@ footer div a:hover {
   transition: all 0.3s ease;
 }
 
-.section--contact .div__form > form > button:before {
+.section__contact .div__form > form > button:before {
   right: 0;
   height: 0%;
   width: 1.5px;
 }
 
-.section--contact .div__form > form > button:after {
+.section__contact .div__form > form > button:after {
   left: 0;
   width: 0%;
   height: 1.5px;
 }
 
-.section--contact .div__form > form > button span:before,
-.section--contact .div__form > form > button span:after {
+.section__contact .div__form > form > button span:before,
+.section__contact .div__form > form > button span:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -660,54 +663,54 @@ footer div a:hover {
   transition: all 0.3s ease;
 }
 
-.section--contact .div__form > form > button span:before {
+.section__contact .div__form > form > button span:before {
   left: 0;
   height: 0%;
-  width: 1px;
+  width: 1.5px;
 }
 
-.section--contact .div__form > form > button span:after {
+.section__contact .div__form > form > button span:after {
   right: 0;
   width: 0%;
-  height: 1px;
+  height: 1.5px;
 }
 
-.section--contact .div__form > form > button:hover {
+.section__contact .div__form > form > button:hover {
   background: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
 }
 
-.section--contact .div__form > form > button:hover:before {
+.section__contact .div__form > form > button:hover:before {
   height: 100%;
 }
 
-.section--contact .div__form > form > button:hover:after {
+.section__contact .div__form > form > button:hover:after {
   width: 100%;
 }
 
-.section--contact .div__form > form > button span:hover {
+.section__contact .div__form > form > button span:hover {
   color: #9C2D41;
 }
 
-.section--contact .div__form > form > button span:hover:before {
+.section__contact .div__form > form > button span:hover:before {
   height: 100%;
 }
 
-.section--contact .div__form > form > button span:hover:after {
+.section__contact .div__form > form > button span:hover:after {
   width: 100%;
 }
 
-.section--contact .div__form > form > button:active {
+.section__contact .div__form > form > button:active {
   top: 2px;
 }
 
-.section--contact .div__img {
+.section__contact .div__img {
   margin-right: 10rem;
 }
 
-.section--contact .div__img > h2 {
+.section__contact .div__img > h2 {
   margin: 0;
   font-family: "Quicksand", sans-serif;
   font-weight: 400;
@@ -715,26 +718,26 @@ footer div a:hover {
   color: #9C2D41;
 }
 
-.section--contact .div__img > p {
+.section__contact .div__img > p {
   font-size: 1.6rem;
   margin-top: 3rem;
   line-height: 21px;
 }
 
-.section--contact .div__img > img {
+.section__contact .div__img > img {
   margin-top: 4rem;
   max-width: 400px;
   max-height: 400px;
 }
 
 @media only screen and (max-width: 1200px) {
-  .section--contact .div__img {
+  .section__contact .div__img {
     margin-right: 5rem;
   }
 }
 
 @media only screen and (max-width: 992px) {
-  .section--contact {
+  .section__contact {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -743,46 +746,58 @@ footer div a:hover {
     height: -moz-max-content;
     height: max-content;
   }
-  .section--contact .div__img {
+  .section__contact .div__img {
     margin-top: 5rem;
     margin-right: 0;
   }
-  .section--contact .div__img img {
+  .section__contact .div__img img {
     display: none;
   }
-  .section--contact .div__img h2 {
+  .section__contact .div__img h2 {
     font-size: 3.6rem;
   }
-  .section--contact .div__form {
+  .section__contact .div__form {
     margin: 5rem 0;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .section--contact .div__img {
+  .section__contact {
+    padding-top: 10rem;
+  }
+  .section__contact .div__img {
     padding: 0 2rem;
   }
-  .section--contact .div__img p {
+  .section__contact .div__img p {
     font-size: 1.4rem;
   }
-  .section--contact .div__form {
+  .section__contact .div__form {
     width: 80%;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .section--contact .div__img h2 {
+  .section__contact .div__img h2 {
     text-align: center;
   }
-  .section--contact .div__img p {
+  .section__contact .div__img p {
     text-align: center;
   }
-  .section--contact .div__form {
+  .section__contact .div__form {
     width: 100%;
   }
 }
 
-.section--works {
+@media screen and (min-height: 1000px) {
+  .section__contact {
+    height: 90vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.section__works {
   width: 100%;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -797,42 +812,47 @@ footer div a:hover {
           flex-direction: column;
 }
 
-.section--works > h2 {
+.section__works > h2 {
   margin: 10rem 14rem 5rem;
   font-size: 4.8rem;
   font-family: "Quicksand", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: #9C2D41;
 }
 
-.section--works img {
+.section__works img {
   max-width: 55rem;
   max-height: 32rem;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  -webkit-animation: show 0.7s ease-in;
-          animation: show 0.7s ease-in;
 }
 
-.section--works img:hover {
+.section__works img:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-box-shadow: 5px 5px 12px 1px #ABABAB;
           box-shadow: 5px 5px 12px 1px #ABABAB;
 }
 
-.section--works h4 {
+.section__works .img--disable:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.section__works h4 {
   font-size: 3.6rem;
   font-family: "Quicksand", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
 }
 
-.section--works p {
+.section__works p {
   font-size: 1.6rem;
 }
 
-.section--works .works--container {
+.section__works .works__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -846,29 +866,107 @@ footer div a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 12rem 0 12rem;
+  margin: 0 9rem;
 }
 
-.section--works .works--container > div {
+.section__works .works__container > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 12rem;
 }
 
-.section--works .works--container > div .works--img__right, .section--works .works--container > div .works--img__left {
+.section__works .works__container > div .works__img--right, .section__works .works__container > div .works__img--left {
   max-width: 40rem;
 }
 
-.section--works .works--container > div .works--img__right {
-  margin-right: 25rem;
+.section__works .works__container > div .works__img--right {
+  margin-right: 10rem;
 }
 
-.section--works .works--container > div .works--img__left {
-  margin-left: 25rem;
+.section__works .works__container > div .works__img--left {
+  margin-left: 10rem;
 }
 
-.section--works .works--container > div:last-child {
+.section__works .works__container > div:last-child {
   margin-bottom: 13rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .section__works .works__container {
+    margin: 0 12rem;
+  }
+  .section__works .works__container > div .works__img--left {
+    margin-left: 25rem;
+  }
+  .section__works .works__container > div .works__img--right {
+    margin-right: 25rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .section__works h4 {
+    padding-top: 3rem;
+  }
+  .section__works img {
+    width: 100%;
+  }
+  .section__works .works__container .works__div--right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .section__works .works__container .works__div--right .works__img--right {
+    margin: 0;
+  }
+  .section__works .works__container .works__div--left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section__works .works__container .works__div--left .works__img--left {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section__works .works__container {
+    margin: 0 5rem;
+  }
+  .section__works > h2 {
+    margin: 5rem 5rem 0;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .section__works {
+    padding-top: 10rem;
+  }
+  .section__works > h2 {
+    font-size: 3.6rem;
+  }
+  .section__works h4 {
+    font-size: 2.8rem;
+  }
+  .section__works p {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .section__works > h2 {
+    margin: 5rem 2rem 0;
+  }
+  .section__works .works__container {
+    margin: 0 2rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

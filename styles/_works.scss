@@ -1,4 +1,4 @@
-.section--works{
+.section__works{
     width: 100%;
     height: max-content;
     padding-top: 7rem;
@@ -8,46 +8,51 @@
         margin: 10rem 14rem 5rem;
         font-size: 4.8rem;
         font-family: $font-secondary;
-        font-weight: $font-regular;
+        font-weight: $font-medium;
         color: $color-secondary;
     }
     img{
         max-width: 55rem;
         max-height: 32rem;
         transition: all 0.2s ease-in;
-        animation: show 0.7s ease-in;
         &:hover{
             transform: scale(1.05);
+            // filter: blur(1px);  //agregar un span con una leyenda => click on! sobre la foto
             box-shadow: 5px 5px 12px 1px $color-terciary;
         }
-        
+    }
+    .img--disable{
+        &:hover{
+            transform: scale(1);
+            box-shadow: none;
+        }
     }
     h4{
         font-size: 3.6rem;
         font-family: $font-secondary;
-        font-weight: $font-regular;
+        font-weight: $font-medium;
         margin: 0;
     }
     p{
         font-size: 1.6rem;
     }
-    .works--container{
+    .works__container{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 0 12rem 0 12rem;
+        margin: 0 9rem;
         > div{
             display: flex;
             margin-top: 12rem;
-            .works--img__right,.works--img__left{
+            .works__img--right,.works__img--left{
                 max-width: 40rem;
             }
-            .works--img__right{
-                margin-right: 25rem;
+            .works__img--right{
+                margin-right: 10rem;
             }
-            .works--img__left{
-                margin-left: 25rem;
+            .works__img--left{
+                margin-left: 10rem;
             }
         }
         > div:last-child{
@@ -57,29 +62,76 @@
 }
 
 
-// @keyframes show {
-//     from{
-//         transform: translateY(60px);
-//     }
-//     to{
-//         transform: translateY(0);
-//     }
-// }
-
 //Brekpoints
 
-// @include breakpoint("xl-desktop"){
-
-// }
-// @include breakpoint("lg-desktop"){
-
-// }
-// @include breakpoint("desktop"){
-
-// }
-// @include breakpoint("tablet"){
-
-// }
-// @include breakpoint("mobile"){
-    
-// }
+@include breakpoint("xl-desktop"){
+    .section__works .works__container{
+        margin: 0 12rem;
+        > div .works__img--left{
+            margin-left: 25rem;
+        }
+        > div .works__img--right{
+            margin-right: 25rem;
+        }
+    }
+}
+@include breakpoint("desktop"){
+    .section__works{
+        h4{
+            padding-top: 3rem;
+        }
+        img{
+            width: 100%;
+        }
+        .works__container{
+            .works__div--right{
+                display: flex;
+                flex-direction: column-reverse;
+                .works__img--right{
+                    margin: 0;
+                }
+            }
+            .works__div--left{
+                display: flex;
+                flex-direction: column;
+                .works__img--left{
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+@include breakpoint("tablet"){
+    .section__works{
+        .works__container{
+            margin: 0 5rem;
+        }
+        > h2{
+            margin: 5rem 5rem 0;
+        }
+    }
+}
+@include breakpoint("mobile"){
+    .section__works{
+        padding-top: 10rem;
+        > h2{
+            font-size: 3.6rem;
+        }
+        h4{
+            font-size: 2.8rem;
+        }
+        p{
+            font-size: 1.4rem;
+        }
+    } 
+}
+@include breakpoint("sm-mobile"){
+    .section__works{
+        > h2{
+            margin: 5rem 2rem 0;
+        }
+        .works__container{
+            margin: 0 2rem;
+        }
+    }
+}
