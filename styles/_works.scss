@@ -11,21 +11,50 @@
         font-weight: $font-medium;
         color: $color-secondary;
     }
-    img{
-        max-width: 55rem;
+    a{
+        position: relative;
         max-height: 32rem;
-        transition: all 0.2s ease-in;
+        max-width: 55rem;
+        transition: all 0.2s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+        img{
+            width: 100%;
+            border-radius: 5px;
+        }
         &:hover{
             transform: scale(1.05);
-            // filter: blur(1px);  //agregar un span con una leyenda => click on! sobre la foto
-            box-shadow: 5px 5px 12px 1px $color-terciary;
+            &::before{
+                opacity: 1;
+            }
         }
     }
     .img--disable{
         &:hover{
             transform: scale(1);
             box-shadow: none;
+            &::before{
+                opacity: 0;
+            }
         }
+    }
+    a::before{
+        content: 'Go to website';
+        position: absolute;
+        border-radius: 50px;
+        font-size: 150%;
+        font-family: $font-secondary;
+        font-weight: $font-medium;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        top: 40%;
+        left: 42%;
+        width: 15%;
+        height: 25%;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.4);;
+        transition: all 0.2s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+        opacity: 0;
     }
     h4{
         font-size: 3.6rem;
@@ -80,9 +109,9 @@
         h4{
             padding-top: 3rem;
         }
-        img{
-            width: 100%;
-        }
+        // img{
+        //     width: 100%;
+        // }
         .works__container{
             .works__div--right{
                 display: flex;
@@ -116,6 +145,9 @@
         padding-top: 10rem;
         > h2{
             font-size: 3.6rem;
+        }
+        a::before{
+            font-size: 90%;
         }
         h4{
             font-size: 2.8rem;

@@ -15,6 +15,7 @@ header{
         display: flex;
         flex-direction: column;
         // cursor: pointer;
+        position: relative;
         a{
           display: flex;
           flex-direction: column;
@@ -28,17 +29,18 @@ header{
         }
         &:after{
           content: '';
-          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 0;
           width: 0;
           height: 1.5px;
           background-color: $color-secondary;
           cursor: pointer;
-          transition: all 0.1s ease-in;
+          transition: all 0.15s ease-in;
         }
-        &:hover{
-          &:after{
-            width: 100%;
-          }
+        &:hover:after{
+          left: 0;
+          width: 100%;
         }
       }
     }

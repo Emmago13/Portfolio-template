@@ -59,6 +59,7 @@ header ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 header ul li a {
@@ -81,16 +82,19 @@ header ul li a span {
 
 header ul li:after {
   content: '';
-  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 0;
   height: 1.5px;
   background-color: #9C2D41;
   cursor: pointer;
-  -webkit-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
 }
 
 header ul li:hover:after {
+  left: 0;
   width: 100%;
 }
 
@@ -820,18 +824,26 @@ footer div a:hover {
   color: #9C2D41;
 }
 
-.section__works img {
-  max-width: 55rem;
+.section__works a {
+  position: relative;
   max-height: 32rem;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+  max-width: 55rem;
+  -webkit-transition: all 0.2s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+  transition: all 0.2s cubic-bezier(0, 0.2, 0.5, 3) 0s;
 }
 
-.section__works img:hover {
+.section__works a img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.section__works a:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  -webkit-box-shadow: 5px 5px 12px 1px #ABABAB;
-          box-shadow: 5px 5px 12px 1px #ABABAB;
+}
+
+.section__works a:hover::before {
+  opacity: 1;
 }
 
 .section__works .img--disable:hover {
@@ -839,6 +851,38 @@ footer div a:hover {
           transform: scale(1);
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.section__works .img--disable:hover::before {
+  opacity: 0;
+}
+
+.section__works a::before {
+  content: 'Go to website';
+  position: absolute;
+  border-radius: 50px;
+  font-size: 150%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 40%;
+  left: 42%;
+  width: 15%;
+  height: 25%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.2s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+  transition: all 0.2s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+  opacity: 0;
 }
 
 .section__works h4 {
@@ -908,9 +952,6 @@ footer div a:hover {
   .section__works h4 {
     padding-top: 3rem;
   }
-  .section__works img {
-    width: 100%;
-  }
   .section__works .works__container .works__div--right {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -952,6 +993,9 @@ footer div a:hover {
   }
   .section__works > h2 {
     font-size: 3.6rem;
+  }
+  .section__works a::before {
+    font-size: 90%;
   }
   .section__works h4 {
     font-size: 2.8rem;

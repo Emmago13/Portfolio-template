@@ -1,4 +1,4 @@
-// var contactButton = document.getElementById('contactButton');
+// let contactButton = document.getElementById('contactButton');
 
 // contactButton.addEventListener('click',() =>{
 //     window.location.href = './_contact.html';
@@ -13,3 +13,19 @@
 
 // let home = document.getElementById('home')
 // console.log(home);
+
+// let worksImage = document.getElementById('works--img');
+// let imgSpan = document.getElementById("img--span");
+// let imgHoover = false;
+// // console.log(imgSpan);
+
+// worksImage.addEventListener('mouseover',()=>{
+//     // imgSpan.classList.toggle("visible")
+//     if(!imgHoover){
+//         imgSpan.classList.add("visible");
+//         imgHoover = true;
+//     }else{
+//         imgSpan.classList.remove("visible");
+//         imgHoover = false;
+//     }
+// })
