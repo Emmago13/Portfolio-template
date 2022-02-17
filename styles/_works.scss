@@ -19,6 +19,7 @@
         img{
             width: 100%;
             border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
         &:hover{
             transform: scale(1.05);
@@ -52,7 +53,7 @@
         width: 15%;
         height: 25%;
         color: #fff;
-        background-color: rgba(0, 0, 0, 0.4);;
+        background-color: rgba(0, 0, 0, 0.4);
         transition: all 0.2s cubic-bezier(0, 0.2, 0.5, 3) 0s;
         opacity: 0;
     }

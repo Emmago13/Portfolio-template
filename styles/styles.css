@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background-color: #F0F0F0;
+  background-color: #fff;
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -59,10 +59,10 @@ header ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relative;
 }
 
 header ul li a {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,7 +80,7 @@ header ul li a span {
   margin-bottom: 5px;
 }
 
-header ul li:after {
+header ul li a:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -93,7 +93,7 @@ header ul li:after {
   transition: all 0.15s ease-in;
 }
 
-header ul li:hover:after {
+header ul li a:hover:after {
   left: 0;
   width: 100%;
 }
@@ -835,6 +835,7 @@ footer div a:hover {
 .section__works a img {
   width: 100%;
   border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .section__works a:hover {
