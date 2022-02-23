@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  scroll-behavior: smooth;
   background-color: #fff;
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -308,6 +309,7 @@ footer div a:hover {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   color: #9C2D41;
+  margin: 3rem 0;
 }
 
 .section__about div img {
@@ -923,6 +925,63 @@ footer div a:hover {
 
 .section__works .works__container > div .works__img--right, .section__works .works__container > div .works__img--left {
   max-width: 40rem;
+}
+
+.section__works .works__container > div .works__img--right > a, .section__works .works__container > div .works__img--left > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-decoration: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000;
+  width: 12.5rem;
+  height: 2rem;
+  -webkit-transition: all 0.3s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+  transition: all 0.3s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+}
+
+.section__works .works__container > div .works__img--right > a > p, .section__works .works__container > div .works__img--left > a > p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.section__works .works__container > div .works__img--right > a > p:after, .section__works .works__container > div .works__img--left > a > p:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #9C2D41;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+
+.section__works .works__container > div .works__img--right > a > img, .section__works .works__container > div .works__img--left > a > img {
+  border: none;
+  height: 100%;
+  width: 25%;
+}
+
+.section__works .works__container > div .works__img--right > a:hover, .section__works .works__container > div .works__img--left > a:hover {
+  width: 13rem;
+}
+
+.section__works .works__container > div .works__img--right > a:hover p:after, .section__works .works__container > div .works__img--left > a:hover p:after {
+  width: 64%;
+}
+
+.section__works .works__container > div .works__img--right > a:hover img, .section__works .works__container > div .works__img--left > a:hover img {
+  padding-left: 10%;
 }
 
 .section__works .works__container > div .works__img--right {
