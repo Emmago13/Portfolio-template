@@ -1,7 +1,6 @@
 .section__works{
     width: 100%;
     height: max-content;
-    padding-top: 7rem;
     display: flex;
     flex-direction: column;
     > h2{
@@ -107,6 +106,7 @@
                         border: none;
                         height: 100%;
                         width: 25%;
+                        transform: translateX(-10px) translateY(1px);
                     }
                     &:hover{
                         width: 13rem;
@@ -115,7 +115,7 @@
                       width: 64%;
                     }
                     &:hover img{
-                        padding-left: 10%;
+                        transform: translateX(0px);
                     }
                 }
             }
@@ -184,7 +184,6 @@
 }
 @include breakpoint("mobile"){
     .section__works{
-        padding-top: 10rem;
         > h2{
             font-size: 3.6rem;
         }
