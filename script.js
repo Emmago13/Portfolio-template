@@ -1,16 +1,14 @@
 
 const navbarMenuIcon = (() => {
-    let body = document.querySelector('body');
+    let header = document.querySelector('.header');
     let menuIcon = document.querySelector('.menu__icon');
 
-    menuIcon.addEventListener('click', () => toogleClass(body, 'nav__active'));
+    menuIcon.addEventListener('click', () => toogleClass(header, 'nav__active'));
     
     const toogleClass = (element, activeClass) => {
         if (element.classList.contains(activeClass)) {
-            console.log(element);
             element.classList.remove(activeClass);
         }else{
-            console.log(element);
             element.classList.add(activeClass);
         }
     }
